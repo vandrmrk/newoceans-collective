@@ -25,11 +25,15 @@ function Layout({ children }: { children: React.ReactNode }) {
    HOME PAGE
 --------------------------------*/
 function Home() {
+  React.useEffect(() => {
+    document.title = "New Oceans Collective";
+  }, []);
+
   return (
     <Layout>
-     <h1 className="hero">
-  The world you were born in <span className="critical">no longer exists</span>.
-</h1>
+      <h1 className="hero">
+        The world you were born in <span className="critical">no longer exists</span>.
+      </h1>
 
       <p className="subtext">
         The systems that shaped the old world no longer hold.
@@ -44,14 +48,17 @@ function Home() {
   );
 }
 
+
 /* ------------------------------
    ABOUT PAGE
 --------------------------------*/
 function About() {
+  React.useEffect(() => {
+    document.title = "About — New Oceans Collective";
+  }, []);
+
   return (
     <Layout>
-
-      {/* This image will be positioned OUTSIDE the white box */}
       <img 
         src="/about-city.jpg" 
         alt="Historical city scene"
