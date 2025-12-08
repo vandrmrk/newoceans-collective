@@ -1,3 +1,4 @@
+
 /* GLOBAL BACKGROUND */
 .layout {
   background: #0B0B0B url("/textures/noise.png");
@@ -35,17 +36,17 @@
 
 .critical {
   position: relative;
-  color: #111111; /* keep text same color */
+  color: #111111;
 }
 
 .critical::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -8px; /* adjust distance from text */
+  bottom: -8px;
   width: 100%;
-  height: 6px; /* thickness of underline */
-  background-color: #C54848; /* industrial red */
+  height: 6px;
+  background-color: #C54848;
 }
 
 /* SUBTEXT */
@@ -94,18 +95,31 @@
   color: white;
 }
 
-/* FAINT SCHEMATIC DIAGRAM */
+/* FAINT SCHEMATIC BACKGROUND IMAGE */
 .schematic {
   position: absolute;
   top: 0;
   left: 0;
-  width: 140%;      /* make larger so details aren't cropped */
+  width: 140%;
   height: 140%;
   object-fit: cover;
-  opacity: 0.12;     /* increase visibility to confirm it works */
+  opacity: 0.12;
   z-index: 1;
   pointer-events: none;
 }
 
+/* ABOUT IMAGE SECTION */
+.about-image-wrapper {
+  position: absolute;
+  left: -420px;
+  top: 200px;
+  width: 350px;
+  z-index: 5;
+}
 
-
+.about-image-wrapper img {
+  width: 100%;
+  border: 1px solid #444;
+  box-shadow: 0 0 25px rgba(0,0,0,0.45);
+  opacity: 0.92;
+}
