@@ -1,5 +1,7 @@
+/* ============================================================
+   GLOBAL LAYOUT + BACKGROUND
+============================================================ */
 
-/* GLOBAL BACKGROUND */
 .layout {
   background: #0B0B0B url("/textures/noise.png");
   background-size: cover;
@@ -11,7 +13,23 @@
   align-items: flex-start;
 }
 
-/* WHITE DOSSIER BLOCK */
+/* Faint schematic background image */
+.schematic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 140%;
+  height: 140%;
+  object-fit: cover;
+  opacity: 0.12;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ============================================================
+   WHITE DOSSIER BLOCK (Shared)
+============================================================ */
+
 .dossier-block {
   background: #FFFFFF;
   color: #111111;
@@ -23,7 +41,10 @@
   border: 1px solid #D0D0D0;
 }
 
-/* HERO LINE */
+/* ============================================================
+   TYPOGRAPHY
+============================================================ */
+
 .hero {
   font-family: "Inter Tight", sans-serif;
   font-size: 42px;
@@ -49,7 +70,6 @@
   background-color: #C54848;
 }
 
-/* SUBTEXT */
 .subtext {
   font-size: 18px;
   line-height: 1.6;
@@ -57,7 +77,6 @@
   margin-bottom: 40px;
 }
 
-/* SECTION TITLE */
 .section-title {
   font-size: 28px;
   font-weight: 700;
@@ -65,7 +84,10 @@
   letter-spacing: -0.5px;
 }
 
-/* BUTTONS */
+/* ============================================================
+   BUTTONS
+============================================================ */
+
 .button-primary {
   background: #111111;
   color: white;
@@ -95,31 +117,54 @@
   color: white;
 }
 
-/* FAINT SCHEMATIC BACKGROUND IMAGE */
-.schematic {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 140%;
-  height: 140%;
-  object-fit: cover;
-  opacity: 0.12;
-  z-index: 1;
-  pointer-events: none;
-}
+/* ============================================================
+   ABOUT PAGE LAYOUT
+============================================================ */
 
-/* ABOUT IMAGE SECTION */
-.about-image-wrapper {
-  position: absolute;
-  left: -420px;
-  top: 200px;
-  width: 350px;
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  position: relative;
   z-index: 5;
 }
 
-.about-image-wrapper img {
+/* The ONLY image style your About page uses */
+.about-image img {
+  width: 600px;   /* ← Adjust this number for size */
+  height: auto;
+  border: 1px solid #000000;
+  box-shadow: 0 0 25px rgba(0,0,0,0.45);
+  opacity: 1;
+  display: block;
+}
+
+/* ============================================================
+   HOME PAGE: IMAGE BELOW WHITE DOSSIER
+============================================================ */
+
+.home-image-below {
+  margin-top: 40px;      /* spacing under the white block */
+  display: flex;
+  justify-content: center;
   width: 100%;
+}
+
+.home-image-below img {
+  width: 650px;          /* adjust size as desired */
+  height: auto;
   border: 1px solid #444;
   box-shadow: 0 0 25px rgba(0,0,0,0.45);
-  opacity: 0.92;
+  opacity: 1;
+}
+
+.home-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers both the block AND the image */
+  width: 100%;
+  position: relative;
+  z-index: 5;
 }

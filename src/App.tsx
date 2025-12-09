@@ -1,5 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import systemsImage from "./assets/systems.jpg";
+import homeImage from "./assets/home.png";
+
 
 /* ------------------------------
    LAYOUT WRAPPER
@@ -32,24 +35,36 @@ function Home() {
 
   return (
     <Layout>
-      <div className="dossier-block">
 
-        <h1 className="hero">
-          The world you were born in <span className="critical">no longer exists</span>.
-        </h1>
+  <div className="home-vertical">
 
-        <p className="subtext">
-          The systems that shaped the old world no longer hold.
-          What comes next will belong to those who can see clearly,
-          think independently, and rebuild with intention.
-        </p>
+    {/* WHITE DOSSIER BLOCK */}
+    <div className="dossier-block home-block">
+      <h1 className="hero">
+        The world you were born in <span className="critical">no longer exists.</span>
+      </h1>
 
-        <Link to="/about">
-          <button className="button-primary">Enter the Vault</button>
-        </Link>
+      <p className="subtext">
+        The systems that shaped the old world no longer hold.
+        What comes next will belong to those who can see clearly,
+        think independently, and rebuild with intention.
+      </p>
 
-      </div>
-    </Layout>
+      <Link to="/about">
+        <button className="button-primary">Enter the Vault</button>
+      </Link>
+    </div>
+
+    {/* IMAGE BELOW */}
+    <div className="home-image-below">
+      <img src={homeImage} alt="Home visual" />
+    </div>
+
+  </div>
+
+</Layout>
+
+
   );
 }
 
@@ -64,24 +79,27 @@ function About() {
   return (
     <Layout>
 
-      {/* IMAGE OUTSIDE WHITE BOX, LEFT-CENTER */}
-      <div className="about-image-wrapper">
-        <img src="/systems.jpg" alt="Systems graphic" />
-      </div>
+      {/* FLEX CONTAINER FOR WHITE BOX + RIGHT IMAGE */}
+      <div className="about-container">
 
-      {/* WHITE DOSSIER BLOCK */}
-      <div className="dossier-block">
+        {/* WHITE DOSSIER BLOCK */}
+        <div className="dossier-block">
+          <h1 className="section-title">About This Project</h1>
 
-        <h1 className="section-title">About This Project</h1>
+          <p className="subtext">
+            This platform explores the machinery shaping modern reality —
+            and how individuals reclaim agency in a world defined by systems.
+          </p>
 
-        <p className="subtext">
-          This platform explores the machinery shaping modern reality —
-          and how individuals reclaim agency in a world defined by systems.
-        </p>
+          <Link to="/">
+            <button className="button-secondary">Back</button>
+          </Link>
+        </div>
 
-        <Link to="/">
-          <button className="button-secondary">Back</button>
-        </Link>
+        {/* IMAGE ON THE RIGHT */}
+        <div className="about-image">
+          <img src={systemsImage} alt="Systems graphic" />
+        </div>
 
       </div>
 
