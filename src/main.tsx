@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+
+/* GLOBAL STYLES */
 import "./App.css";
-import './styles/index.css'
+import "./styles/index.css";
+import "./styles/sigil.css"; // ✅ ADD THIS LINE
 
-
+/* RAINBOWKIT / WEB3 */
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiProvider, http } from "wagmi";

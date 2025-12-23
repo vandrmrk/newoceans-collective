@@ -114,3 +114,11 @@ a {
 a:hover {
   opacity: 0.8;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .sigil line,
+  .sigil circle {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

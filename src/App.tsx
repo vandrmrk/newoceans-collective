@@ -1,27 +1,35 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
+
 import systemsImage from "./assets/systems.jpg";
 import homeImage from "./assets/home.png";
+import topLogo from "./assets/newoceans.png";
 
+import Sigil from "./components/Sigil";
 
 /* ------------------------------
-   LAYOUT WRAPPER
+   LAYOUT WRAPPER (must be under <Router>)
 --------------------------------*/
 function Layout({ children }: { children: React.ReactNode }) {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   return (
-    <div className="layout">
+    <>
+      {/* TOP BANNER (Fixed) */}
+      <header className="top-banner">
+        <img src={topLogo} alt="New Oceans Collective" className="site-logo" />
+      </header>
 
-      {/* LEFT-SIDE IMAGE (works only on About page) */}
-      {/* The About component will inject this dynamically */}
-      {children}
+      <div className="layout">
+        <div className="content">
+          {children}
+          {isHome && <Sigil />}
+        </div>
 
-      {/* BACKGROUND OVERLAY SCHEMATIC */}
-      <img
-        src="/schematic.jpg"
-        alt=""
-        className="schematic"
-      />
-    </div>
+        <img src="/schematic.jpg" alt="" className="schematic" />
+      </div>
+    </>
   );
 }
 
@@ -35,36 +43,35 @@ function Home() {
 
   return (
     <Layout>
+      <div className="home-vertical">
+        <div className="dossier-block home-block">
+          <h1 className="hero">
+            The world you were born in <span className="critical">no longer exists.</span>
+          </h1>
 
-  <div className="home-vertical">
+          <p className="subtext">
+            The systems that shaped the old world no longer hold. What comes next will belong to those who
+            can see clearly, think independently, and rebuild with intention.
+          </p>
 
-    {/* WHITE DOSSIER BLOCK */}
-    <div className="dossier-block home-block">
-      <h1 className="hero">
-        The world you were born in <span className="critical">no longer exists.</span>
-      </h1>
+          <div className="vault-actions">
+            <Link to="/about">
+              <button className="button-primary">Enter the Vault</button>
+            </Link>
 
-      <p className="subtext">
-        The systems that shaped the old world no longer hold.
-        What comes next will belong to those who can see clearly,
-        think independently, and rebuild with intention.
-      </p>
+            <nav className="vault-links">
+              <Link to="/research">Research</Link>
+              <Link to="/writing">Writing</Link>
+              <Link to="/archive">Archive</Link>
+            </nav>
+          </div>
+        </div>
 
-      <Link to="/about">
-        <button className="button-primary">Enter the Vault</button>
-      </Link>
-    </div>
-
-    {/* IMAGE BELOW */}
-    <div className="home-image-below">
-      <img src={homeImage} alt="Home visual" />
-    </div>
-
-  </div>
-
-</Layout>
-
-
+        <div className="home-image-below">
+          <img src={homeImage} alt="Home visual" />
+        </div>
+      </div>
+    </Layout>
   );
 }
 
@@ -78,17 +85,13 @@ function About() {
 
   return (
     <Layout>
-
-      {/* FLEX CONTAINER FOR WHITE BOX + RIGHT IMAGE */}
       <div className="about-container">
-
-        {/* WHITE DOSSIER BLOCK */}
         <div className="dossier-block">
-          <h1 className="section-title">About This Project</h1>
+          <h1 className="section-title">About</h1>
 
           <p className="subtext">
-            This platform explores the machinery shaping modern reality —
-            and how individuals reclaim agency in a world defined by systems.
+            This platform explores the machinery shaping modern reality — and how individuals reclaim agency
+            in a world defined by systems.
           </p>
 
           <Link to="/">
@@ -96,13 +99,10 @@ function About() {
           </Link>
         </div>
 
-        {/* IMAGE ON THE RIGHT */}
         <div className="about-image">
           <img src={systemsImage} alt="Systems graphic" />
         </div>
-
       </div>
-
     </Layout>
   );
 }
