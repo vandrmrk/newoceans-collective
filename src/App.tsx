@@ -5,7 +5,7 @@ import systemsImage from "./assets/systems.jpg";
 import homeImage from "./assets/home.png";
 import topLogo from "./assets/newoceans.png";
 
-import Sigil from "./components/Sigil";
+import sigil from "./components/sigil";
 
 /* ------------------------------
    LAYOUT WRAPPER (must be under <Router>)
