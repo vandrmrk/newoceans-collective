@@ -2,10 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
-/* GLOBAL STYLES */
-import "./App.css";
+/* GLOBAL RESET / BASE */
 import "./styles/index.css";
-import "./styles/sigil.css"; // ✅ ADD THIS LINE
+/* APP LAYOUT + PAGES */
+import "./App.css";
+/* COMPONENT-SPECIFIC */
+import "./styles/sigil.css";
+
 
 /* RAINBOWKIT / WEB3 */
 import "@rainbow-me/rainbowkit/styles.css";
