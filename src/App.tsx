@@ -119,6 +119,10 @@ function About() {
               governmental entity gone rogue; a once-common tongue now turned against you,
               and your beautiful oak door now kindle for the fire."
             </p>
+            <p className="subtext" style={{ marginBottom: 0 }}>
+              If you want this to feel more “classified,” we can add a red stamp, a case number, and metadata
+              like DATE / SOURCE / STATUS.
+            </p>
           </div>
         </div>
 
